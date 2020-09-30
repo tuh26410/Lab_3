@@ -5,8 +5,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,6 +31,9 @@ public class ColorActivity extends AppCompatActivity {
 
         colorSpinner = findViewById(R.id.colorSpinner);
         background = findViewById(R.id.textView);
+
+        //background.setBackgroundColor(Color.RED);
+
         colorName = new ArrayList<>();
         colorVal = new ArrayList<>();
 
@@ -57,6 +62,48 @@ public class ColorActivity extends AppCompatActivity {
         final BaseAdapter colorAdapter = new CustomAdapter(this, colorVal);
         colorSpinner.setAdapter(colorAdapter);
 
-        //colorSpinner.setOnItemClickListener();
+        colorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                 int BC = (int) colorSpinner.getItemAtPosition(i);
+                 //Log.d("the color selected is: ", BC);
+                 if(BC == Color.RED){
+                     background.setBackgroundColor(colorVal.get(0));
+                 }else
+                 if(BC == Color.BLUE){
+                     background.setBackgroundColor(colorVal.get(1));
+                 }else
+                 if(BC == Color.BLACK){
+                     background.setBackgroundColor(colorVal.get(2));
+                 }else
+                 if(BC == Color.GREEN){
+                     background.setBackgroundColor(colorVal.get(3));
+                 }else
+                 if(BC == Color.WHITE){
+                     background.setBackgroundColor(colorVal.get(4));
+                 }else
+                 if(BC == Color.LTGRAY){
+                     background.setBackgroundColor(colorVal.get(5));
+                 }else
+                 if(BC == Color.DKGRAY){
+                     background.setBackgroundColor(colorVal.get(6));
+                 }else
+                 if(BC == Color.MAGENTA){
+                     background.setBackgroundColor(colorVal.get(7));
+                 }else
+                 if(BC == Color.YELLOW){
+                     background.setBackgroundColor(colorVal.get(8));
+                 }else
+                 if(BC == Color.CYAN){
+                     background.setBackgroundColor(colorVal.get(9));
+                 }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 }
