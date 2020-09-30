@@ -24,8 +24,8 @@ public class ColorActivity extends AppCompatActivity {
         colors.add("Black");
         colors.add("Green");
         colors.add("White");
-        colors.add("Grey");
-        colors.add("Brown");
+        colors.add("Light Grey");
+        colors.add("Dark Grey");
         colors.add("Magenta");
         colors.add("Yellow");
         colors.add("Cyan");
