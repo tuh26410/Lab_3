@@ -8,21 +8,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class ColorActivity extends AppCompatActivity {
 
-    final String[] colors = {"Red", "Blue", "Black", "Green", "White", "Grey", "Brown", "Purple", "Yellow", "Cyan"};
-
-    //CustomAdapter spinner = new CustomAdapter();
+    ArrayList<String> colors; //{"Red", "Blue", "Black", "Green", "White", "Grey", "Brown", "Purple", "Yellow", "Cyan"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
-        Spinner colorSpinner = (Spinner) findViewById(R.id.colorSpinner);
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Black");
+        colors.add("Green");
+        colors.add("White");
+        colors.add("Grey");
+        colors.add("Brown");
+        colors.add("Magenta");
+        colors.add("Yellow");
+        colors.add("Cyan");
 
-
-
+        final BaseAdapter colorAdapter = new CustomAdapter(this, colors);
     }
 }
